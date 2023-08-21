@@ -233,7 +233,7 @@ class Wanet(BadNet):
         epoch_current = 0
 
         # set the backdoor warping
-        ins = torch.rand(1, 2, args.k, args.k) * 2 - 1  # generate (1,2,4,4) shape [-1,1] gaussian
+        ins = torch.rand(1, 2, args.k, args.k) * 2 - 1  # generate (1,2,4,4) shape [-1,1] uniform
         ins = ins / torch.mean(
             torch.abs(ins))  # scale up, increase var, so that mean of positive part and negative be +1 and -1
         noise_grid = (
